@@ -19,11 +19,16 @@ public class AuteurRepositoryImpl {
 
             conn=dataSource.getConnection();
 
-            PreparedStatement preparedStatement = conn.prepareStatement("insert into AUTEUR (NOM, PRENOM) values (?,?)");
+            PreparedStatement preparedStatement = conn.prepareStatement("insert into AUTEUR (NOM, PRENOM) values (?,?)", Statement.RETURN_GENERATED_KEYS);
             preparedStatement.setString(1, auteur.getNom());
             preparedStatement.setString(2, auteur.getPrenom());
 
             preparedStatement.executeUpdate();
+            ResultSet rs = preparedStatement.getGeneratedKeys();
+
+            if(rs.next()){
+                auteur.setId(rs.getLong(1));
+            }
 
             System.out.println("Auteur ajouté");
 

@@ -6,9 +6,12 @@ import com.mycompany.MesLivres.repository.AuteurRepositoryImpl;
 public class TestDeConnection {
     public static void main(String... args){
         AuteurRepositoryImpl auteurRepository = new AuteurRepositoryImpl();
-        Auteur bill = auteurRepository.getById(6L);
-        bill.setNom("Maskof");
-        auteurRepository.update(bill);
+        Auteur jiji = new Auteur();
+        jiji.setPrenom("Jiss");
+        jiji.setNom("Mock");
+        auteurRepository.create(jiji);
+
+        System.out.println("L'id de "+jiji.getPrenom()+" est : "+ jiji.getId());
 
     }
 }
