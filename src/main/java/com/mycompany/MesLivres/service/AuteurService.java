@@ -12,4 +12,9 @@ public class AuteurService {
     }
 
     public void createAuteur(Auteur auteur){auteurRepository.create(auteur);}
+
+    public Auteur getById(Long id)
+    {
+        return auteurRepository.getById(id);
+    }
 }
