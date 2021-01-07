@@ -15,4 +15,8 @@ public class LivreService {
         livreRepository.create(livre);
     }
 
+    public Livre getLivre(Long id){
+        return livreRepository.getById(id);
+    }
+
 }
