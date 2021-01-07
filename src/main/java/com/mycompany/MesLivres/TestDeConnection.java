@@ -2,7 +2,6 @@ package com.mycompany.MesLivres;
 
 import com.mycompany.MesLivres.entity.Auteur;
 import com.mycompany.MesLivres.entity.Livre;
-import com.mycompany.MesLivres.repository.AuteurRepositoryImpl;
 import com.mycompany.MesLivres.service.AuteurService;
 import com.mycompany.MesLivres.service.LivreService;
 
