@@ -1,9 +1,16 @@
 package com.mycompany.MesLivres.entity;
 
+import javax.persistence.*;
+
+@Entity
 public class Auteur {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long Id;
     private String nom;
     private String prenom;
+    @Transient
     private Livre livre;
 
     //region Getters & Setters
